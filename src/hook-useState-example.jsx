@@ -13,7 +13,7 @@ import React, { useState } from "react";
 
 const HookUseStateExample = () => {
   const [count, setCount] = useState(0);
-  const [todos, setTodos] = useState([{ text: "First to do item" }]);
+  const [todos, setTodos] = useState([{ text: "This is the first one" }]);
   return (
     <div>
       <h1>Hook: useState Example</h1>
@@ -23,7 +23,9 @@ const HookUseStateExample = () => {
           setCount(count + 1);
           setTodos([
             ...todos,
-            { text: `Wazzup: State variable count = ${count}` }
+            {
+              text: `this is the ${count}`
+            }
           ]);
         }}
       >
@@ -31,7 +33,7 @@ const HookUseStateExample = () => {
       </button>
       <p>{count}</p>
       <ul>
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <li>{todo.text}</li>
         ))}
       </ul>
